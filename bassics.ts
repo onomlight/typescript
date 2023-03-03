@@ -12,7 +12,8 @@ let age : number;
 
 age = 12; // 함수와 매개 변수여서 '' 사용어려움
 
-let userName : string; //뮨자욜
+let userName : string | string[]; //뮨자욜 + 유니온을 사용할 경우 더 부드럽게 사용할수있음 
+
 //타입스크립트는 타입표기는 소문자로 시작함 java처럼 대문자아님
 
 userName = 'Max'
@@ -51,3 +52,16 @@ let people:{
     age: number;
 } [];
 // 배열로 만들려면 대괄호 붙여야함
+
+
+
+//타입 추론(type inference)
+
+let coures : string | number  = 'React - The Complete Guide';
+
+coures = 12341;
+//  타입스크립트 핵심기능인 타입추론기능
+
+//한개이상의 타입을 지정하게 해주는 기능 유니온(union) 타입
+
+//유니온 타입은 타입을 정의할때 한개 이상의 타입을 사용할수있음
