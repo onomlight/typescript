@@ -72,3 +72,21 @@ coures = 12341;
 //한개이상의 타입을 지정하게 해주는 기능 유니온(union) 타입
 
 //유니온 타입은 타입을 정의할때 한개 이상의 타입을 사용할수있음
+
+
+
+
+//Functions & types
+
+function add(a:number,b:number){ // 함수 이름에 커서를 가져되면 어떻게 정의하는 지 볼 수 있음
+return a + b ;
+}
+
+//function add(a: number, b: number): number
+// 커서시 이렇게 팝업되나 타입스크립트에서 숫자형이라고 추론한것
+// : 을 붙이고 그뒤에 반환 타입을 지정하면됨 숫자형 문자열 유니온으로 지정도 가능
+
+
+function print(value: any) {
+    console.log(value);
+}
