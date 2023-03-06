@@ -90,3 +90,23 @@ return a + b ;
 function print(value: any) {
     console.log(value);
 }
+
+
+
+// 타입스크립트에서 제일 중요한게 제네릭 기능
+// Generics 
+//<T>
+
+function insertAtBeginning<T>(array : T[], value:T){
+    const newArray = [value,...array];
+    // 전개연산자 ... 를 이용해 기존 배열 복사 => 해당 기능은 모던자바스크립트도 지원하고 타입스크립트도 지원
+    return newArray;
+}
+
+const demoArray = [1,2,3];
+
+const updatedArray = insertAtBeginning(demoArray, -1); // 이렇게하면 -1이 배열에 삽입 , -1,1,2,3 배열반환
+const stringArray = insertAtBeginning(['a','b','c',],'d')
+
+
+// updatedArray[0].split('');
