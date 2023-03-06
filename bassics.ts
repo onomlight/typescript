@@ -26,13 +26,22 @@ let hobbies : string[];
 // 대괄호를 붙여야함 문자열만 가능하며 숫자 추가시 오류 발생
 hobbies = ['스포츠','쿠키',] ;  
 
+
 // 배열타입은 위 처럼 저장하면됨
 
-// 객체저장시
-let person: {
+type Person = 
+{
     name: string;
     age: number;
 };
+// 타입스크립트에 추가되는 부분이고, 타입 키워드 뒤에 원하는 이름을 붙이면됨
+// 타입스크립트안에서만 존재하는 기능이며 자바스크립트로 컴파일시 사라짐
+// = 오른쪽에 있는건 js의 value 가 아니라 타입을 정의한것
+
+
+
+// 객체저장시
+let person:Person
 
 person = {
     name: ' 매긋',
@@ -47,11 +56,9 @@ person = {
 
 
 
-let people:{
-    name: string;
-    age: number;
-} [];
+let people:Person [];
 // 배열로 만들려면 대괄호 붙여야함
+//+ 중복을 막기위해 타입별칭을 만듬
 
 
 
