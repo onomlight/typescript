@@ -11,11 +11,17 @@ function App() {
       return prevTodos.concat(newTodo);
     });
   };
+
+  const removerTodoHandler = (todoId: string) => {
+    setTodos((prevTodos) => {
+      return prevTodos.filter((todo) => todo.id !== todoId);
+    });
+  };
   return (
     <div>
       <NewTodo onAddTodo={addTodoHandler} />
       {/* 배열을 바뀌면서 todos 컴포턴트 업데이트하며, 다시 new로 줘야함 */}
-      <Todos items={todos} />
+      <Todos items={todos} onRemoveTodo={removerTodoHandler} />
     </div>
   );
 }
