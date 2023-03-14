@@ -6,7 +6,6 @@ const TodoItem: React.FC<{
 }> = (props) => {
   return (
     <li className={classes.item} onClick={props.onRemoveTodo}>
-      {" "}
       {props.text}
     </li>
   );
