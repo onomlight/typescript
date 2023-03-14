@@ -1,5 +1,8 @@
 import { useRef } from "react";
-const NewTodo = () => {
+const NewTodo: React.FC<{ onAddTodo: (text: string) => void }> = (props) => {
+  //react.fc<{}> => 제네릭 타입특성을 이용해서 프로퍼티 객체를 구체적으로 정의함
+  //이후에 함수를 정의하여 함수타입으로 한 후 화살표 함ㄴ수 작성함
+
   const todoTextInputRef = useRef<HTMLInputElement>(null);
   // useRef 자체가 제네릭 타입을 이용해 사용가능함
   // 오류가 계속 뜨는 이유는 기본값을 직접 설정하지 않았기 때문임
@@ -13,6 +16,7 @@ const NewTodo = () => {
       //throw an error
       return;
     }
+    props.onAddTodo(enterdText);
   };
   return (
     <form onSubmit={submitHandler}>
